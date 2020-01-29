@@ -1,17 +1,12 @@
-<<<<<<< HEAD
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
 const APIKEY = process.env.REACT_APP_MOVIE_API_KEY
-=======
-import axios from 'axios';
->>>>>>> fc3646c29ce1f5114bb35c592622738521247714
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
   params: {
-<<<<<<< HEAD
       api_key: APIKEY,
       language: 'en-US'    
   }
@@ -83,13 +78,3 @@ export const tvApi = {
 };
 
 
-=======
-    api_key: 'f40268da21bdf3d65eac97928a67b394',
-    language: 'en-US'
-  }
-});
-
-api.get('tv/popular');
-
-export default api;
->>>>>>> fc3646c29ce1f5114bb35c592622738521247714

@@ -1,19 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-import Home from "../Routes/Home";
-import Tv from "../Routes/Tv";
-import Search from "../Routes/Search";
+import Home from "../Routes/Home/HomeContainer";
 import Header from "./Header";
+import Tv from "../Routes/Tv/TvContainer";
+import Search from "../Routes/Search/SearchContainer";
+import Detail from "../Routes/Detail/DetailContainer";
+
 
 export default () => (
   <Router>
-    <Switch>
-      <Header />
-        <Route path="/" exact component={Home} />
-        <Route path="/tv" component={Tv} />
-        <Route path="/search" component={Search} />
+    <>
+    <Header />
+      <Switch>
+        <Route path="/" exact component= {Home} />
+        <Route path="/tv" component = {Tv} />
+        <Route path="/search" component = {Search} />
+        <Route path="/movie/:id" component={Detail} />
+        <Route path="/show/:id" component={Detail} />
         <Redirect from="*" to="/" /> 
-    </Switch>
+      </Switch>
+    </> 
   </Router>
 );
 

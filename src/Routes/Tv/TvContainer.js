@@ -5,9 +5,9 @@ export default class TvContainer extends Component {
     state = {
         loading: true,
         error: null,
-        popular: [],
-        topRated: [],
-        airingToday: []
+        popular: null,
+        topRated: null,
+        airingToday: null
     };
 
     componentDidMount = async () => {
@@ -43,7 +43,8 @@ export default class TvContainer extends Component {
             error, 
             popular, 
             topRated, 
-            airingToday } = this.state;
+            airingToday
+        } = this.state;
         return (
             <TvPresenter
                 loading={loading}

@@ -5,10 +5,9 @@ export default class HomeContainer extends React.Component {
     state = {
         loading: true,
         error: null,
-        popular: [],
-        upcoming: [],
-        nowPlaying: []
-    };
+        popular: null,
+        upcoming: null,
+        nowPlaying: null    };
 
     componentDidMount = async () => {
         try {

@@ -3,8 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.nav`
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 0px 20px;
+  background-color: rgba(20, 20, 20, 0.9);
   padding-top: 15px;
   display: flex;
   position: fixed;
@@ -16,6 +15,7 @@ const Header = styled.nav`
     fill: white;
     height: 15px;
   }
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
 `;
 
 const NavLink = styled(Link)`

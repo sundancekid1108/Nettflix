@@ -11,7 +11,21 @@ const api = axios.create({
   }
 });
 
+// api.get('/genre/movie/list', {params: {api_key: API_KEY}}).then(response => { 
+// 	console.log(response);
+// })
+// .catch(error => {
+//     console.log(error.response);
+//     console.log(API_KEY);
+// });
 
+// api.get('/genre/tv/list', {params: {api_key: API_KEY}}).then(response => { 
+// 	console.log(response);
+// })
+// .catch(error => {
+//     console.log(error.response);
+//     console.log(API_KEY);
+// });
 // api.get('movie/popular', {params: {api_key: API_KEY}}).then(response => { 
 // 	console.log(response);
 // })
@@ -24,8 +38,8 @@ const api = axios.create({
  */
 
 
-export const moviesApi = {
-  getMovie: (id) =>
+export const movieApi = {
+  getMovieDetail: (id) =>
     api.get(`movie/${id}?api_key=${API_KEY}`, { params: { append_to_response: "videos" } }).catch(error => {
       console.log(error.response)
     }),
@@ -53,7 +67,7 @@ export const moviesApi = {
  */
 
 export const tvApi = {
-  getShow: (id) =>
+  getTvDetail: (id) =>
     api.get(`tv/${id}?api_key=${API_KEY}`, { params: { append_to_response: "videos" } }).catch(error => {
       console.log(error.response)
     }),

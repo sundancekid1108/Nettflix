@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Poster = ({
     imageUrl, rating, name, year, seasons, id
-});
+}) => null;
 //Poster객체
 
 Poster.PropTypes = {

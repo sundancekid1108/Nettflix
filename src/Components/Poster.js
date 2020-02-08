@@ -75,11 +75,17 @@ const Year = styled.span`
 
 const DataColumn = styled.div``;
 
-const Poster = ({ imageUrl, rating, title, year, seasons, id }) => (
-  <Link to={seasons ? `/show/${id}` : `/movie/${id}`}>
+const Poster = ({ imageUrl, rating, title, year, isTv,seasons, id }) => (
+  <Link to={isTv ? `/show/${id}` : `/movie/${id}`}>
     <Container>
       <ImageContainer>
-        <Image backgroundImage = {`https://image.tmdb.org/t/p/w500${imageUrl}`} />
+        <Image
+          backgroundImage={
+              imageUrl
+                ? `https://image.tmdb.org/t/p/w500${imageUrl}`
+                : require("../assets/noPoster.png")
+          }
+        />
         <Votes>
           <span role="img" aria-label="Stars">
             ⭐️
@@ -108,7 +114,8 @@ Poster.propTypes = {
   rating: PropTypes.number,
   title: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
-  seasons: PropTypes.string
+  seasons: PropTypes.string,
+  isTv: PropTypes.bool.isRequired
 };
 
 export default Poster; 

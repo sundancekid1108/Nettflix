@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DetailPresenter = ({ loading, result, error }) => null;
+
+const DetailPresenter = ({ loading, error, reslut}) => null;
 
 DetailPresenter.propTypes = {
     loading: PropTypes.bool.isRequired,

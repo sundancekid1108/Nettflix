@@ -40,9 +40,7 @@ export default class HomeContainer extends React.Component {
     };
 
     render(){
-        console.log("upcoming", this.state.upcoming);
         const { nowPlaying, upcoming, popular, error, loading } = this.state;
-        console.log("HomePresenter", HomePresenter);
         return(
             <>
                 <HomePresenter

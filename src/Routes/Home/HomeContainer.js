@@ -46,11 +46,11 @@ export default class HomeContainer extends React.Component {
         return(
             <>
                 <HomePresenter
-                loading={loading}
-                error={error}
-                popular={popular}
-                upcoming={upcoming}
-                nowPlaying={nowPlaying}
+                    loading={loading}
+                    error={error}
+                    popular={popular}
+                    upcoming={upcoming}
+                    nowPlaying={nowPlaying}
                 />
             </>
         );

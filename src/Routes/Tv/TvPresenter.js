@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loading from "../../Components/Loading";
 import Poster from "../../Components/Poster";
-
+import ErrorMessage from "../../Components/ErrorMessage"
 const Container = styled.div`
   padding: 10px;
   padding-top: 30px;
@@ -32,15 +32,15 @@ const TvPresenter = ({ loading, error, popular, topRated, airingToday }) =>
             <Section>
                 <SectionTitle>Popular Shows</SectionTitle>
                     <Grid>
-                        {popular.map(show => (
+                        {popular.map(TvShow => (
                             <Poster
-                                imageUrl={show.poster_path}
-                                rating={show.vote_average}
-                                title={show.name}
-                                year={show.first_air_date.substring(0, 4)}
+                                imageUrl={TvShow.poster_path}
+                                rating={TvShow.vote_average}
+                                title={TvShow.name}
+                                year={String(TvShow.first_air_date).substring(0, 4)}
                                 isTv={true}
-                                id={show.id}
-                                key={show.id}
+                                id={TvShow.id}
+                                key={TvShow.id}
                             />
                         ))}
                     </Grid>
@@ -83,6 +83,7 @@ const TvPresenter = ({ loading, error, popular, topRated, airingToday }) =>
                         </Grid>
                 </Section>
             )}
+            {error && <ErrorMessage text={error} />}      
         </Container>
     );
 

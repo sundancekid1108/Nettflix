@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loading from "../../Components/Loading";
 import Poster from "../../Components/Poster";
+import ErrorMessage from "../../Components/ErrorMessage";
 
 const Container = styled.div`
   padding: 10px;
@@ -39,7 +40,7 @@ const HomePresenter = ({ loading, error, popular, upcoming, nowPlaying }) =>
                   imageUrl={movie.poster_path}
                   rating={movie.vote_average}
                   title={movie.title}
-                  year={movie.release_date.substring(0, 4)}
+                  year={String(movie.release_date).substring(0, 4)}
                   isTv={false}
                   id={movie.id}
                   key={movie.id}
@@ -58,7 +59,7 @@ const HomePresenter = ({ loading, error, popular, upcoming, nowPlaying }) =>
                   imageUrl={movie.poster_path}
                   rating={movie.vote_average}
                   title={movie.title}
-                  year={movie.release_date.substring(0, 4)}
+                  year={String(movie.release_date).substring(0, 4)}
                   isTv={false}
                   id={movie.id}
                   key={movie.id}
@@ -67,7 +68,7 @@ const HomePresenter = ({ loading, error, popular, upcoming, nowPlaying }) =>
             </Grid>
           </Section>
         )}
-
+      {error && <ErrorMessage text={error} />}         
     </Container>
   </>);
 

@@ -5,7 +5,7 @@ export default class SearchContainer extends Component {
     state = {
         loading: false,
         movieResults: null,
-        showResults: null,
+        tvResults: null,
         searchingBy: "",
         error: null
     };
@@ -19,6 +19,15 @@ export default class SearchContainer extends Component {
         });
     };
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const {searchingBy} = this.state;
+        if (searchingBy !== "") {
+            this.search(searchingBy);
+        }
+    };
+
+
     search = async (searchingBy) => {
         this.setState({ loading: true});
         try {
@@ -26,13 +35,14 @@ export default class SearchContainer extends Component {
                 data: {results: movieResults}
             } = await movieApi.searchMovies(searchingBy);
             const {
-                data: { results: showResults }
+                data: { results: tvResults }
             } = await tvApi.searchTv(searchingBy);
 
             this.setState({
-                movieResults, showResults
+                movieResults, tvResults
             });
-
+            // console.log("movieResults", movieResults);
+            // console.log("tvResults", tvResults);
         } catch {
             this.setState({
                 error: "Sorry! Can't searching it!!"
@@ -42,22 +52,14 @@ export default class SearchContainer extends Component {
         }
 
     };  
-
-    handleSubmit = () => {
-        const {searchingBy} = this.state;
-        if (searchingBy !== "") {
-            this.search(searchingBy);
-        }
-    };
-
-    
+  
 
     render() {
         const {
             loading,
             error,
             movieResults,
-            showResults,
+            tvResults,
             searchingBy
         } = this.state;
 
@@ -66,8 +68,10 @@ export default class SearchContainer extends Component {
                 loading={loading}
                 error={error}
                 movieResults={movieResults}
-                showResults={showResults}
+                tvResults={tvResults}
                 searchingBy={searchingBy}
+                updateSearchingBy={this.updateSearchingBy}
+                handleSubmit={this.handleSubmit}
             />
         )
     }

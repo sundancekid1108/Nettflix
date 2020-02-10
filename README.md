@@ -8,7 +8,7 @@ React, ES6 학습용 영화 검색 App
 - [x] React Patterns
 - [x] SaSS & Styled Components
 - [x] Typescript
-- [x] Deployment (GH Pages, Netlify)
+- [x] Deployment
 
 ## Screens
 

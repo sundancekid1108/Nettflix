@@ -20,7 +20,7 @@ export default class DetailContainer extends React.Component {
         this.isMovie = isMovie;
         this.getDetail(id);
     };
-
+d
     getDetail = async (id) => {
         try {
             let result;
@@ -31,6 +31,7 @@ export default class DetailContainer extends React.Component {
                 const {data} = await tvApi.getTvDetail(id);
                 result = data
             }
+            console.log("result", result);
             this.setState({
                 result
             });

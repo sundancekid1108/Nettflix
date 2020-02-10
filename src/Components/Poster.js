@@ -51,6 +51,9 @@ const ImageContainer = styled.div`
     ${Votes} {
       opacity: 1;
     }
+    ${Image} {
+      opacity: 0.3;
+    }
   } 
 `;
 
@@ -81,17 +84,19 @@ const Poster = ({ imageUrl, rating, title, year, isTv,seasons, id }) => (
       <ImageContainer>
         <Image
           backgroundImage={
-              imageUrl
-                ? `https://image.tmdb.org/t/p/w500${imageUrl}`
-                : require("../assets/noPoster.png")
-          }
+            imageUrl
+              ? `https://image.tmdb.org/t/p/w500${imageUrl}`
+              : require("../assets/noPoster.png")
+            }
         />
-        <Votes>
-          <span role="img" aria-label="Stars">
-            ⭐️
-          </span>{" "}
-          {rating}/10
-        </Votes>
+        {rating > 0 ? (
+          <Votes>
+            <span role="img" aria-label="Stars">
+              ⭐️
+            </span>{" "}
+            {rating}/10
+          </Votes>
+        ) : null}
       </ImageContainer>
       <Data>
         <DataColumn>

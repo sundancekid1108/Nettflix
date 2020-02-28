@@ -2,7 +2,7 @@ import React from "react";
 import DetailPresenter from "./DetailPresenter";
 import { movieApi, tvApi } from "../../api";
 
-export default class DetailContainer extends React.Component {
+export default class extends React.Component {
     state = {
         loading: true,
         result: null,

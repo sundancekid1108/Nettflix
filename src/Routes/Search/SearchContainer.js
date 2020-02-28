@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SearchPresenter from './SearchPresenter'
 import {movieApi, tvApi} from '../../api';
-export default class SearchContainer extends Component {
+export default class extends Component {
     state = {
         loading: false,
         movieResults: null,

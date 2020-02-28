@@ -68,6 +68,25 @@ const HomePresenter = ({ loading, error, popular, upcoming, nowPlaying }) =>
             </Grid>
           </Section>
         )}
+
+        {upcoming && (
+          <Section>
+            <SectionTitle>upcoming</SectionTitle>
+            <Grid>
+              {upcoming.map(movie => (
+                <Poster
+                  imageUrl={movie.poster_path}
+                  rating={movie.vote_average}
+                  title={movie.title}
+                  year={String(movie.release_date).substring(0, 4)}
+                  isTv={false}
+                  id={movie.id}
+                  key={movie.id}
+                />
+              ))}
+            </Grid>
+          </Section>
+        )}
       {error && <ErrorMessage text={error} />}         
     </Container>
   </>);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TvPresenter from './TvPresenter'
 import {tvApi} from '../../api';
-export default class TvContainer extends Component {
+export default class extends Component {
     state = {
         loading: true,
         error: null,

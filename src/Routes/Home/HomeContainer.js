@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePresenter from "./HomePresenter"
 import {movieApi} from '../../api';
-export default class HomeContainer extends React.Component {
+export default class extends React.Component {
     state = {
         loading: true,
         error: null,
